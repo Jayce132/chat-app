@@ -8,10 +8,13 @@ import FilterContacts from "./filterContacts";
 
 const PeopleList = () => {
 
+    // For re-rendering last seen
+    let response = [];
+
     const {state, actions} = useContext(StoreContext);
 
     const fetchContacts = async () => {
-        const response = await getAllContacts();
+        response = await getAllContacts();
 
         if (!response.error) {
             actions.generalActions.setContactsResults(response.data);
@@ -20,6 +23,14 @@ const PeopleList = () => {
 
     useEffect(() => {
         fetchContacts();
+
+        // Re-render last seen every 1 minute by setting contacts to the same value as before
+        // Experimental
+        const interval = setInterval(() => {
+            actions.generalActions.setContactsResults(response.data);
+        }, 60000);
+
+        return () => clearInterval(interval);
     }, []);
 
     const {results, filterBy, loggedInContact} = state.generalStates.contacts;
@@ -45,6 +56,7 @@ const PeopleList = () => {
         actions.generalActions.setCurrentContact(contact);
     }
 
+    const renderPeopleList = () => {}
     if (results) {
         return (
             <div className="people-list" id="people-list">

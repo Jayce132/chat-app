@@ -52,7 +52,7 @@ const MainChat = () => {
 
     return (
         <div className="container clearfix">
-            <Link to="contacts">Contacts</Link>
+            {/*<Link to="contacts">Contacts</Link>*/}
             <Login/>
             <PeopleList/>
             <Chat currentChat={currentChat}/>
