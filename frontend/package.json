@@ -1,0 +1,44 @@
+{
+  "name": "internship",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "axios": "^0.26.1",
+    "bootstrap": "^5.1.3",
+    "react": "^18.0.0",
+    "react-bootstrap": "^2.4.0",
+    "react-dom": "^18.0.0",
+    "react-scripts": "^5.0.1"
+  },
+  "main": "build/index.js",
+  "module": "build/index.js",
+  "homepage": "/",
+  "author": {
+    "name": "José Zúñiga",
+    "email": "zuniga.joseignacio@gmail.com",
+    "url": "https://github.com/JoseZunigaDyehs"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "deploy": "gh-pages -d build"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ],
+  "devDependencies": {
+    "gh-pages": "^2.0.1",
+    "react-router-dom": "^6.3.0",
+    "sass": "^1.50.0",
+    "sass-loader": "^12.6.0",
+    "webpack": "^5.72.0"
+  }
+}
